@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <!--==================== Google SEO ======================-->
+    <meta
+      name="description"
+      content="we serve up delicious gourmet pastries for all occasions."
+    />
+    <meta name="keywords" content="Cakes and Confectionery in Nigeria" />
+    <meta name="theme-color" content="#d6a55f" />
+    <meta name="msapplication-navbutton-color" content="#d6a55f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="author" content="Lipeunim" />
+    <meta name="site_name" content="fcc" />
+    <meta property="og:title" content="Fehin Cakes & Confectionery" />
+    <meta
+      property="og:image"
+      content="https://fcc-lipeunim.vercel.app/images/Fccflyer.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <meta property="og:url" content="https://fcc-lipeunim.vercel.app/" />
+    <meta
+      property="og:description"
+      content="we serve up delicious gourmet pastries for all occasions."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!--==================== FAV-ICON ======================-->
+    <link rel="apple-touch-icon" sizes="192x192" href="images/Fccweb.jpg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Fccweb.jpg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/Fccweb.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="chome.css" />
+    <title>FCC Cart</title>
+  </head>
+  <body>
+    <!-- PRELOADER -->
+    <header>
+      <div class="nav container">
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/now.png"
+            width="230"
+            height="100"
+            alt="CKR - Home"
+          />
+        </a>
+
+        <a href="cart.html">
+          <div class="cart">
+            <i class="bi bi-cart2"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <div id="label" class="text-center"></div>
+
+    <div class="shopping-cart">
+      <div class="shopping-cart" id="shopping-cart"></div>
+
+      <div class="makereservation" id="hidePop">
+        <form action="#" method="POST" id="payForm">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="example@gmail.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              required
+              placeholder="Delivery Address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Region</label>
+            <select name="select" id="select" class="form-control">
+              <option hidden>Select your region</option>
+              <option value="rice">Rice</option>
+              <option value="beans">Beans</option>
+              <option value="chicken">Chicken</option>
+            </select>
+          </div>
+          <span id="input"></span>
+          <div class="form-group">
+            <label for="">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              placeholder="+234 123 456 7890"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="date"
+              placeholder="Date for delivery"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Time</label>
+            <input
+              type="time"
+              class="form-control"
+              id="time"
+              placeholder="Time for delivery"
+              required
+            />
+          </div>
+          <button type="submit" class="check">Checkout</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+  </body>
+  <script>
+
+  </script>
+  <script src="Data.js"></script>
+  <script src="cart.js"></script>
+</html>
