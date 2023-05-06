@@ -1,3 +1,9 @@
+const preloader = document.querySelector("[data-preaload]");
+
+window.addEventListener("load", function () {
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
+});
 let label = document.getElementById("label");
 let ShoppingCart = document.getElementById("shopping-cart");
 
@@ -143,22 +149,74 @@ var entry;
 
 let TotalFee = () => {
   entries = {
-    rice: 200,
-    beans: 300,
-    chicken: 400
+    abule: 200,
+    agege: 300,
+    agidingbi: 500,
+    aguda: 300,
+    ajah: 200,
+    ajegunle: 500,
+    ajeromiIfelodun: 200,
+    akerele: 300,
+    akoka: 200,
+    alaba: 300,
+    alausa: 500,
+    alimosho: 300,
+    apapa: 200,
+    badagry: 300,
+    bariga: 500,
+    coker: 300,
+    dopemu: 200,
+    ebuteMetta: 300,
+    epe: 200,
+    festacTown: 500,
+    gbagada: 200,
+    idumota: 300,
+    ifakoIjaye: 200,
+    ijesha: 500,
+    ikeja: 200,
+    ikorodu: 300,
+    ikoyi: 500,
+    ilupeju: 300,
+    iyanaIpaja: 500,
+    ketu: 300,
+    lagosIsland: 200,
+    lagosMainland: 300,
+    lawanson: 200,
+    lekki: 300,
+    marina: 200,
+    maryland: 500,
+    mazaMaza: 200,
+    mende: 300,
+    mile2: 200,
+    mushin: 300,
+    obalende: 200,
+    ogba: 300,
+    ojo: 200,
+    ojoduBerger: 500,
+    ojota: 200,
+    ojuelegba: 300,
+    onipanu: 500,
+    oregun: 300,
+    oshodiIsolo: 200,
+    palmgrove: 500,
+    satelliteTown: 200,
+    shomolu: 300,
+    surulere: 500,
+    takwaBay: 300,
+    tinubuSquare: 200,
+    victoriaIsland: 500,
+    yaba: 500,
+    others:1000
   };
   document.querySelector("#select").addEventListener("change", (e) => {
     entry = e.target.value;
     delfee = entries[entry]
-    document.querySelector("#input").textContent = "Your delivery is "+ delfee
+    document.querySelector("#input").innerHTML = `Your delivery fee is <b>${delfee}</b> ✅`
     console.log(delfee)
   })
 
 };
 TotalFee();
-// console.log(delfee)
-// var totalAmountpaidd = delfee + 50;
-// console.log(totalAmountpaidd)
 var desc = JSON.stringify(cartData);
 let hidePop = document.getElementById("hidePop");
 
@@ -177,16 +235,17 @@ function payNow(e) {
   const address = document.getElementById("address").value;
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
+  const region = document.getElementById("select").value;
 
   console.log(delfee)
-  totalAmountpaid = amount+delfee
+  totalAmountpaid = amount+delfee+50
 
   FlutterwaveCheckout({
     public_key: "FLWPUBK_TEST-e9ed7f46854efc95342a0d0a48adf0c6-X",
     tx_ref: txRef,
     amount: totalAmountpaid,
     currency: "NGN",
-    redirect_url: "https://ckr-lipeunim.vercel.app/success.html",
+    redirect_url: "https://ckr-ssa.vercel.app/success.html",
     subaccounts: [{
       id: "RS_8219605B02266C5E1B95204AAB066076",
       transaction_charge_type: "percentage",
@@ -198,7 +257,8 @@ function payNow(e) {
       date: date,
       phone_number: phone,
       time: time,
-      payload: desc,
+      region: region,
+      itemSelected: desc,
     },
 
     customer: {
@@ -209,20 +269,20 @@ function payNow(e) {
     customizations: {
       title: "Chefs Kitchen Restaurant",
       description: "Payment for purchase",
-      logo: "https://ckr-lipeunim.vercel.app/assets/images/fav.png",
+      logo: "https://ckr-ssa.vercel.app/assets/images/fav.png",
     },
     onclose: function () {},
-    callback: function (data) {
-      const reference = data.tx_ref;
-      console.log("This is the data returned after a charge", data);
-      if (data.tx.chargedata == "00" || data.tx.chargedata == "0") {
-        window.location = "https://ckr-lipeunim.vercel.app/success.html";
-        // redirect to a success page
-      } else {
-        window.location = "https://ckr-lipeunim.vercel.app/failure.html";
-        // redirect to a failure page.
-      }
-    },
+    // callback: function (data) {
+    //   const reference = data.tx_ref;
+    //   console.log("This is the data returned after a charge", data);
+    //   if (data.tx.chargedata == "00" || data.tx.chargedata == "0") {
+    //     window.location = "https://ckr-lipeunim.vercel.app/success.html";
+    //     // redirect to a success page
+    //   } else {
+    //     window.location = "https://ckr-lipeunim.vercel.app/failure.html";
+    //     // redirect to a failure page.
+    //   }
+    // },
   });
 
   basket = [];
