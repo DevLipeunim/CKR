@@ -38,6 +38,7 @@ body {
   place-content: center;
   justify-items: center;
   transition: 500ms ease;
+
 }
 
 .preload > * {
@@ -77,14 +78,15 @@ body {
     90deg,
     transparent 0% 16.66%,
     hsla(0, 3%, 7%, 1) 33.33% 50%,
-    transparent 66.66% 75%);
+    transparent 66.66% 75%
+  );
   background-size: 500%;
   font-size: calc(2rem + 3vw);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1em;
-  text-transform: uppercase;
   text-align: center;
-  letter-spacing: 16px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
   padding-inline-start: 16px;
   -webkit-text-fill-color: transparent;
   background-clip: text;
