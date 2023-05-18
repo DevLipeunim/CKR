@@ -28,12 +28,16 @@ const addEventOnElements = function (elements, eventType, callback) {
  */
 
 const navbar = document.querySelector("[data-navbar]");
+const backHome = document.querySelectorAll("[data-home]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
+
+
 
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
+  backHome.classList.toggle("active");
   document.body.classList.toggle("nav-active");
 };
 
